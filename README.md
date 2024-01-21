@@ -13,12 +13,15 @@
 
 
 
+
 # ⭐ Run the App in your Machine
 * You must have `Visual Studio Code` or `Android Studio` in your Machine
 * You must have installed `Flutter` in the above platforms
 * Clone the project from Github using the link `https://github.com/BhaargavGuptaP/learnit.git` or download the project from my Repository
 * Run the `pubspec.yaml` file to load the flutter packages
 * Open the Emulator and run the Project
+
+
 
 
 
