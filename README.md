@@ -32,11 +32,7 @@
      <img src = "Demo_Images_Github/All_Results_Page.png" height="500px">
      <img src = "Demo_Images_Github/Quiz_Page.png" height="500px"><img src = "Demo_Images_Github/Quiz_Result_Page.png" height="500px"> 
   </div>
-  <div>
-     <h2><b>Profile Page</b></h2> <br>
-     
-  </div>
-  <div>
+  <div display="inline-block">
      <h2><b>All Result Page</b></h2>  <h2><b>Quiz Page</b></h2>
      
   </div>
