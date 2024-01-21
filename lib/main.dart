@@ -28,6 +28,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      //app starts from splash screen
       debugShowCheckedModeBanner: false,
       home: Splash(),
     );
