@@ -40,7 +40,7 @@ class _HomeState extends State<Home> {
     'An interjection is a word or expression in the nature of a word that shows the emotion or feeling of the author. These words or expressions are usually not grammatically related to the other words in a sentence. They are used to express emotion, such as surprise, disgust, happiness, etc.',
   ];
 
-  List<String> video_name = [
+  List<String> videoName = [
     'noun',
     'pronoun',
     'verb',

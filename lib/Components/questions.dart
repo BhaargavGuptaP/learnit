@@ -8,7 +8,7 @@ List<String> quizNames = [
   'conjunction',
   'interjection'
 ];
-List<String> video_name = [
+List<String> videoName = [
   'noun',
   'pronoun',
   'verb',

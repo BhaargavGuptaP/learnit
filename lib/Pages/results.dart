@@ -28,7 +28,6 @@ class _ResultPageState extends State<ResultPage> {
     for (int i = 0; i < widget.userAnswers.length; i++) {
       if (widget.userAnswers[i] == widget.answers[i]) {
         c++;
-        print(widget.answers[i]);
       }
     }
     final docUser = FirebaseFirestore.instance
@@ -131,7 +130,7 @@ class _ResultPageState extends State<ResultPage> {
                   fontSize: asp * 50,
                   fontWeight: FontWeight.bold)),
           SizedBox(height: 40),
-          Container(
+          SizedBox(
             width: wid * 0.8,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

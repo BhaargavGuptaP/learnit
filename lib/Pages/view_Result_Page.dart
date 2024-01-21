@@ -71,7 +71,7 @@ class ViewResult extends StatelessWidget {
         user.preposition +
         user.conjunction +
         user.interjection;
-    return Container(
+    return SizedBox(
       height: hei * 0.85,
       child: SingleChildScrollView(
         child: Column(
@@ -91,7 +91,7 @@ class ViewResult extends StatelessWidget {
               child: Stack(
                 children: [
                   Center(
-                    child: Container(
+                    child: SizedBox(
                       height: 100,
                       width: 100,
                       child: Center(
@@ -183,7 +183,7 @@ class ViewResult extends StatelessWidget {
                   fontFamily: 'mont2')),
           SizedBox(height: 10),
           Text(
-            '${mark}/10',
+            '$mark/10',
             style: TextStyle(
                 color: Color(0xFFEFEBE0),
                 fontSize: asp * 25,
