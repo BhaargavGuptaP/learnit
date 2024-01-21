@@ -12,25 +12,27 @@
 * LearnIT is developed using `Flutter` as Frontend and `Firebase` as the Backend of the application.
 
   
-## ⭐ Run the App in your Machine
+# ⭐ Run the App in your Machine
 * You must have `Visual Studio Code` or `Android Studio` in your Machine
 * You must have installed `Flutter` in the above platforms
 * Clone the project from Github using the link `https://github.com/BhaargavGuptaP/learnit.git` or download the project from my Repository
 * Run the `pubspec.yaml` file to load the flutter packages
 * Open the Emulator and run the Project
 
-## ⭐ ScreenShots of LearnIT App
+# ⭐ ScreenShots of LearnIT App
   <div>
-     <h2><b>Main Page</b></h2> <br>
-     <img src = "Demo_Images_Github/Main_Page.png" height="500px" margin-right="30px">
-  </div>
-  <div>
-     <h2><b>Landing Page</b></h2> <br>
-     <img src = "Demo_Images_Github/Landing_Page.png" height="500px"> 
-  </div>
-  <div>
-     <h2><b>LogIn Page</b> </h2><br>
-     <img src = "Demo_Images_Github/LogIn_page.png" height="500px">
+     <div display="inline-flex">
+        <h2><b>Main Page</b></h2> <br>
+        <img src = "Demo_Images_Github/Main_Page.png" height="500px" margin-right="30px">
+     </div>
+     <div>
+        <h2><b>Landing Page</b></h2> <br>
+        <img src = "Demo_Images_Github/Landing_Page.png" height="500px"> 
+     </div>
+     <div>
+        <h2><b>LogIn Page</b> </h2><br>
+        <img src = "Demo_Images_Github/LogIn_page.png" height="500px">
+     </div>
   </div>
   <br><br>
   <div>
