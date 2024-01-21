@@ -20,9 +20,7 @@
 * Open the Emulator and run the Project
 
 # ⭐ ScreenShots of LearnIT App
-  <div display= "grid";
-  gap= "1px";
-  grid-template-columns= "repeat(3, 1fr)";>
+  <div display="inline-block">
      <div>
         <img src = "Demo_Images_Github/Main_Page.png" height="500px">
      </div>
