@@ -20,16 +20,12 @@
 * Open the Emulator and run the Project
 
 ## ⭐ ScreenShots of LearnIT App
-  <div>
-     <b>Main Page</b>
-     <br>
-     <img src = "Demo_Images_Github/Main_Page.png" height="500px">
-     <img src = "Demo_Images_Github/Landing_Page.png" height="500px"> 
-  </div>
-  <img src = "Demo_Images_Github/Landing_Page.png" height="500px"> <br>
+  <b>Main Page</b> <br>
+  <img src = "Demo_Images_Github/Main_Page.png" height="500px">
+  <img src = "Demo_Images_Github/Landing_Page.png" height="500px"> 
   <img src = "Demo_Images_Github/LogIn_page.png" height="500px"> <br>
-  <img src = "Demo_Images_Github/SignUp_Page.png" height="500px"> <br>
-  <img src = "Demo_Images_Github/Profile_Page.png" height="500px"> <br>
+  <img src = "Demo_Images_Github/SignUp_Page.png" height="500px"> 
+  <img src = "Demo_Images_Github/Profile_Page.png" height="500px"> 
   <img src = "Demo_Images_Github/All_Result_page.png" height="500px"> <br>
-  <img src = "Demo_Images_Github/Quiz_Page.png" height="500px"> <br>
-  <img src = "Demo_Images_Github/Quiz_Result_Page.png" height="500px"> <br>
+  <img src = "Demo_Images_Github/Quiz_Page.png" height="500px"> 
+  <img src = "Demo_Images_Github/Quiz_Result_Page.png" height="500px"> 
