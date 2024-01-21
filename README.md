@@ -20,16 +20,16 @@
 * Open the Emulator and run the Project
 
 # ⭐ ScreenShots of LearnIT App
-  <div display="flex" flex-direction="column">
-     <div>
+  <div display="flex"; flex-wrap="wrap";>
+     <div flex="1";>
         <h2><b>Main Page</b></h2> <br>
         <img src = "Demo_Images_Github/Main_Page.png" height="500px" margin-right="30px">
      </div>
-     <div>
+     <div flex="1";>
         <h2><b>Landing Page</b></h2> <br>
         <img src = "Demo_Images_Github/Landing_Page.png" height="500px"> 
      </div>
-     <div>
+     <div flex="1">
         <h2><b>LogIn Page</b> </h2><br>
         <img src = "Demo_Images_Github/LogIn_page.png" height="500px">
      </div>
