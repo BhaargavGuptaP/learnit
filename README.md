@@ -30,8 +30,9 @@
   </div>
   <div>
      <b>LogIn Page</b> <br>
-     <img src = "Demo_Images_Github/LogIn_page.png" height="500px"> <br>
+     <img src = "Demo_Images_Github/LogIn_page.png" height="500px">
   </div>
+  <br><br><br>
   <div>
      <b>SignUp Page</b> <br>
      <img src = "Demo_Images_Github/SignUp_Page.png" height="500px"> 
@@ -42,8 +43,9 @@
   </div>
   <div>
      <b>All Result Page</b> <br>
-     <img src = "Demo_Images_Github/All_Results_Page.png" height="500px"> <br>
+     <img src = "Demo_Images_Github/All_Results_Page.png" height="500px">
   </div>
+  <br><br><br>
   <div>
      <b>Quiz Page</b> <br>
      <img src = "Demo_Images_Github/Quiz_Page.png" height="500px">
