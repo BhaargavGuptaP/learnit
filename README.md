@@ -1,5 +1,5 @@
 # ⭐ LearnIT
-* The first step to learn English is to start learning with the basics which is the '8 Parts of Speech', The 8 Parts of Speech includes:
+* The first step to learn English is to start learning with the basics which is the `8 Parts of Speech`, The 8 Parts of Speech includes:
     * Noun
     * Pronoun
     * Verb
@@ -22,10 +22,17 @@
 ## ⭐ ScreenShots of LearnIT App
   <b>Main Page</b> <br>
   <img src = "Demo_Images_Github/Main_Page.png" height="500px" margin-right="30px">
+  <b>Landing Page</b> <br>
   <img src = "Demo_Images_Github/Landing_Page.png" height="500px"> 
+  <b>LogIn Page</b> <br>
   <img src = "Demo_Images_Github/LogIn_page.png" height="500px"> <br>
+  <b>SignUp Page</b> <br>
   <img src = "Demo_Images_Github/SignUp_Page.png" height="500px"> 
+  <b>Profile Page</b> <br>
   <img src = "Demo_Images_Github/Profile_Page.png" height="500px"> 
+  <b>All Result Page</b> <br>
   <img src = "Demo_Images_Github/All_Results_Page.png" height="500px"> <br>
+  <b>Quiz Page</b> <br>
   <img src = "Demo_Images_Github/Quiz_Page.png" height="500px"> 
+  <b>Quiz Result Page</b> <br>
   <img src = "Demo_Images_Github/Quiz_Result_Page.png" height="500px"> 
