@@ -1,4 +1,4 @@
-#⭐ LearnIT
+# ⭐ LearnIT
 * The first step to learn English is to start learning with the basics which is the '8 Parts of Speech', The 8 Parts of Speech includes:
     * Noun
     * Pronoun
@@ -12,12 +12,19 @@
 * LearnIT is developed using `Flutter` as Frontend and `Firebase` as the Backend of the application.
 
   
-##⭐ Run the App in your Machine
+## ⭐ Run the App in your Machine
 * You must have `Visual Studio Code` or `Android Studio` in your Machine
 * You must have installed `Flutter` in the above platforms
 * Clone the project from Github using the link `https://github.com/BhaargavGuptaP/learnit.git` or download the project from my Repository
 * Run the `pubspec.yaml` file to load the flutter packages
 * Open the Emulator and run the Project
 
-  ##⭐ ScreenShots of LearnIT App
-  
+## ⭐ ScreenShots of LearnIT App
+  <img src = "Demo_Images_Github/Main_Page.png" > <br>
+  <img src = "Demo_Images_Github/Landing_Page.png" > <br>
+  <img src = "Demo_Images_Github/LogIn_page.png" > <br>
+  <img src = "Demo_Images_Github/SignUp_Page.png" > <br>
+  <img src = "Demo_Images_Github/Profile_Page.png" > <br>
+  <img src = "Demo_Images_Github/All_Result_page.png" > <br>
+  <img src = "Demo_Images_Github/Quiz_Page.png" > <br>
+  <img src = "Demo_Images_Github/Quiz_Result_Page.png" > <br>
