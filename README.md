@@ -37,15 +37,6 @@
      
   </div>
   <div>
-     <h2><b>All Result Page</b></h2> <br>
-     
-  </div>
-  <br><br>
-  <div>
-     <h2><b>Quiz Page</b></h2> <br>
-     
-  </div>
-  <div>
-     <h2><b>Quiz Result Page</b></h2> <br>
+     <h2><b>All Result Page</b></h2>  <h2><b>Quiz Page</b></h2>
      
   </div>
