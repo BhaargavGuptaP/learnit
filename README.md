@@ -21,7 +21,7 @@
 
 ## ⭐ ScreenShots of LearnIT App
   <b>Main Page</b> <br>
-  <img src = "Demo_Images_Github/Main_Page.png" height="500px">
+  <img src = "Demo_Images_Github/Main_Page.png" height="500px" margin-right="30px">
   <img src = "Demo_Images_Github/Landing_Page.png" height="500px"> 
   <img src = "Demo_Images_Github/LogIn_page.png" height="500px"> <br>
   <img src = "Demo_Images_Github/SignUp_Page.png" height="500px"> 
