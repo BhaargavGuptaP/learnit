@@ -22,17 +22,17 @@
 # ⭐ ScreenShots of LearnIT App
   <div display= "grid"
   gap= "1px"
-  grid-template-columns "repeat(3, 1fr)">
+  grid-template-columns= "repeat(3, 1fr)">
      <div>
-        <h2><b>Main Page</b></h2> <br>
+        <h2><b>Main Page</b></h2>
         <img src = "Demo_Images_Github/Main_Page.png" height="500px" margin-right="30px">
      </div>
      <div>
-        <h2><b>Landing Page</b></h2> <br>
+        <h2><b>Landing Page</b></h2>
         <img src = "Demo_Images_Github/Landing_Page.png" height="500px"> 
      </div>
      <div>
-        <h2><b>LogIn Page</b> </h2><br>
+        <h2><b>LogIn Page</b> </h2>
         <img src = "Demo_Images_Github/LogIn_page.png" height="500px">
      </div>
   </div>
