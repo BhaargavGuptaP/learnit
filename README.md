@@ -20,7 +20,10 @@
 * Open the Emulator and run the Project
 
 ## ⭐ ScreenShots of LearnIT App
-  <img src = "Demo_Images_Github/Main_Page.png" height="500px"> <br>
+  <div>
+     <b>Main Page</b>
+     <img src = "Demo_Images_Github/Main_Page.png" height="500px"> <br>
+  </div>
   <img src = "Demo_Images_Github/Landing_Page.png" height="500px"> <br>
   <img src = "Demo_Images_Github/LogIn_page.png" height="500px"> <br>
   <img src = "Demo_Images_Github/SignUp_Page.png" height="500px"> <br>
