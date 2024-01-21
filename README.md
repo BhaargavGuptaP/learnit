@@ -21,36 +21,36 @@
 
 ## ⭐ ScreenShots of LearnIT App
   <div>
-     <h3><b>Main Page</b></h3> <br>
+     <h2><b>Main Page</b></h2> <br>
      <img src = "Demo_Images_Github/Main_Page.png" height="500px" margin-right="30px">
   </div>
   <div>
-     <h3><b>Landing Page</b></h3> <br>
+     <h2><b>Landing Page</b></h2> <br>
      <img src = "Demo_Images_Github/Landing_Page.png" height="500px"> 
   </div>
   <div>
-     <h3><b>LogIn Page</b> </h3><br>
+     <h2><b>LogIn Page</b> </h2><br>
      <img src = "Demo_Images_Github/LogIn_page.png" height="500px">
   </div>
   <br><br>
   <div>
-     <h3><b>SignUp Page</b></h3> <br>
+     <h2><b>SignUp Page</b></h2> <br>
      <img src = "Demo_Images_Github/SignUp_Page.png" height="500px"> 
   </div>
   <div>
-     <h3><b>Profile Page</b></h3> <br>
+     <h2><b>Profile Page</b></h2> <br>
      <img src = "Demo_Images_Github/Profile_Page.png" height="500px">
   </div>
   <div>
-     <h3><b>All Result Page</b></h3> <br>
+     <h2><b>All Result Page</b></h2> <br>
      <img src = "Demo_Images_Github/All_Results_Page.png" height="500px">
   </div>
   <br><br>
   <div>
-     <h3><b>Quiz Page</b></h3> <br>
+     <h2><b>Quiz Page</b></h2> <br>
      <img src = "Demo_Images_Github/Quiz_Page.png" height="500px">
   </div>
   <div>
-     <h3><b>Quiz Result Page</b></h3> <br>
+     <h2><b>Quiz Result Page</b></h2> <br>
      <img src = "Demo_Images_Github/Quiz_Result_Page.png" height="500px"> 
   </div>
