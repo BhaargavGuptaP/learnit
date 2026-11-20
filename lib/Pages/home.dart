@@ -86,7 +86,13 @@ class _HomeState extends State<Home> {
                             builder: (context) => Profile(
                                 name: FirebaseAuth
                                     .instance.currentUser!.displayName
-                                    .toString())));
+                                    .toString()))).then((_) {
+                      // show a name changed on the Profile page
+                      final user = FirebaseAuth.instance.currentUser;
+                      if (mounted && user != null) {
+                        setState(() => widget.name = user.displayName.toString());
+                      }
+                    });
                   },
                   child: Container(
                     margin: EdgeInsets.only(top: 50, right: 20),

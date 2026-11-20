@@ -176,11 +176,16 @@ class ViewResult extends StatelessWidget {
       margin: EdgeInsets.symmetric(horizontal: wid * 0.045, vertical: 20),
       child: Column(
         children: [
-          Text(name,
-              style: TextStyle(
-                  color: Color(0xFFEFEBE0),
-                  fontSize: asp * 35,
-                  fontFamily: 'mont2')),
+          // scale long names (e.g. Preposition) down instead of breaking
+          // them mid-word on small phones
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(name,
+                style: TextStyle(
+                    color: Color(0xFFEFEBE0),
+                    fontSize: asp * 35,
+                    fontFamily: 'mont2')),
+          ),
           SizedBox(height: 10),
           Text(
             '$mark/10',
