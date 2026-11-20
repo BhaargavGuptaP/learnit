@@ -120,8 +120,7 @@ class _HomeState extends State<Home> {
                   iconColor,
                   2),
             ),
-            Container(
-              height: hei * 0.8,
+            Expanded(
               child: SingleChildScrollView(
                 child: ListView.builder(
                   itemBuilder: (context, index) {

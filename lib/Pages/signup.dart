@@ -4,7 +4,6 @@ import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:learnit/Pages/login.dart';
-import 'package:learnit/Pages/signup_login.dart';
 import 'package:learnit/Utils/color.dart';
 import '../Components/widget.dart';
 import '../Utils/text.dart';
@@ -38,8 +37,7 @@ class _SignUpState extends State<SignUp> {
             children: [
               IconButton(
                 onPressed: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => SorL()));
+                  Navigator.pop(context);
                 },
                 icon: Icon(
                   Icons.arrow_back_ios,
@@ -81,25 +79,47 @@ class _SignUpState extends State<SignUp> {
                     if (EmailValidator.validate(email.text) &&
                         (password.text.length >= 8) &&
                         (password.text == confirmPassword.text)) {
-                      UserCredential? userCredential;
                       try {
-                        userCredential = await FirebaseAuth.instance
+                        await FirebaseAuth.instance
                             .createUserWithEmailAndPassword(
                                 email: email.text.trim(),
-                                password: password.text.trim())
-                            .then((value) {
-                          createUser();
-                          FirebaseAuth.instance.currentUser!
-                              .updateDisplayName(name.text.trim());
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      Home(name: name.text.trim())));
-                        });
+                                password: password.text.trim());
+                        await createUser();
+                        await FirebaseAuth.instance.currentUser!
+                            .updateDisplayName(name.text.trim());
+                        if (!context.mounted) return;
+                        // Home becomes the only page, so Back can't return
+                        // to the sign-up screen.
+                        Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    Home(name: name.text.trim())),
+                            (route) => false);
                       } catch (e) {
-                        print(e.toString());
+                        if (!context.mounted) return;
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(e is FirebaseAuthException
+                                ? (e.message ?? 'Sign up failed')
+                                : 'Sign up failed'),
+                            duration: Duration(seconds: 2),
+                            backgroundColor: Colors.red,
+                          ),
+                        );
                       }
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(
+                          content: Text(!EmailValidator.validate(email.text)
+                              ? 'Please enter a valid Email'
+                              : password.text.length < 8
+                                  ? 'Password must be at least 8 characters'
+                                  : 'Please enter same password in both fields'),
+                          duration: Duration(seconds: 2),
+                          backgroundColor: Colors.red,
+                        ),
+                      );
                     }
                   } else if (name.text.isEmpty) {
                     ScaffoldMessenger.of(context).showSnackBar(
@@ -117,7 +137,7 @@ class _SignUpState extends State<SignUp> {
                         backgroundColor: Colors.red,
                       ),
                     );
-                  } else if (password.text == confirmPassword.text) {
+                  } else if (password.text != confirmPassword.text) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                         content:
@@ -147,8 +167,8 @@ class _SignUpState extends State<SignUp> {
                       border: Border.all(color: buttonDarkColor),
                       gradient: LinearGradient(
                         colors: [
-                          Color(0xFFFFA500).withOpacity(0.4),
-                          Color(0xFFFFA500).withOpacity(0.3)
+                          Color(0xFFFFA500).withValues(alpha: 0.4),
+                          Color(0xFFFFA500).withValues(alpha: 0.3)
                         ],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomCenter,
@@ -239,7 +259,7 @@ class _SignUpState extends State<SignUp> {
                     )
                   : null,
               hintStyle: TextStyle(
-                  color: Color(0xFFEFEBE0).withOpacity(0.5),
+                  color: Color(0xFFEFEBE0).withValues(alpha: 0.5),
                   fontFamily: 'mont2',
                   fontSize: asp * 30),
               enabledBorder: OutlineInputBorder(

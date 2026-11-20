@@ -66,7 +66,8 @@ class _Video_PlayerState extends State<Video_Player> {
     var z = hei / wid;
     return Scaffold(
       backgroundColor: Color(0xFF171617),
-      body: Column(
+      body: SingleChildScrollView(
+        child: Column(
         children: [
           SizedBox(height: 50),
           Row(
@@ -101,6 +102,7 @@ class _Video_PlayerState extends State<Video_Player> {
             isNext: false,
           ),
         ],
+      ),
       ),
     );
   }

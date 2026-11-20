@@ -5,7 +5,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:learnit/Utils/color.dart';
 
-import 'home.dart';
 
 class ResultPage extends StatefulWidget {
   ResultPage(
@@ -50,12 +49,9 @@ class _ResultPageState extends State<ResultPage> {
         actions: [
           GestureDetector(
             onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => Home(
-                          name: FirebaseAuth.instance.currentUser!.displayName
-                              .toString())));
+              // Go back to the Home page already underneath instead of
+              // stacking a new one on top of the quiz and results.
+              Navigator.popUntil(context, (route) => route.isFirst);
             },
             child:
                 Icon(Icons.arrow_forward_ios_rounded, color: Color(0xFFEFEBE0)),
@@ -64,7 +60,8 @@ class _ResultPageState extends State<ResultPage> {
         ],
         backgroundColor: Color(0xFF171617),
       ),
-      body: Column(
+      body: SingleChildScrollView(
+        child: Column(
         children: [
           SizedBox(height: 10),
           Text('Your Answers',
@@ -79,7 +76,7 @@ class _ResultPageState extends State<ResultPage> {
                 child: Container(
                   decoration: BoxDecoration(
                     border:
-                        Border.all(color: Color(0xFFEFEBE0).withOpacity(0.5)),
+                        Border.all(color: Color(0xFFEFEBE0).withValues(alpha: 0.5)),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   height: hei * 0.4,
@@ -92,15 +89,17 @@ class _ResultPageState extends State<ResultPage> {
                         title: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(
-                                (index + 1).toString() +
-                                    '.  ' +
-                                    widget.userAnswers[index],
-                                style: TextStyle(
-                                    color: (widget.answers[index] ==
-                                            widget.userAnswers[index])
-                                        ? Colors.green
-                                        : Colors.red)),
+                            Flexible(
+                              child: Text(
+                                  (index + 1).toString() +
+                                      '.  ' +
+                                      widget.userAnswers[index],
+                                  style: TextStyle(
+                                      color: (widget.answers[index] ==
+                                              widget.userAnswers[index])
+                                          ? Colors.green
+                                          : Colors.red)),
+                            ),
                             Icon(
                                 (widget.answers[index] ==
                                         widget.userAnswers[index])
@@ -131,7 +130,7 @@ class _ResultPageState extends State<ResultPage> {
                   fontWeight: FontWeight.bold)),
           SizedBox(height: 40),
           SizedBox(
-            width: wid * 0.8,
+            width: wid * 0.9,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -180,6 +179,7 @@ class _ResultPageState extends State<ResultPage> {
           ),
           SizedBox(height: 20),
         ],
+      ),
       ),
     );
   }

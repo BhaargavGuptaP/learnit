@@ -93,13 +93,13 @@ class _VideoWidgetPlayerState extends State<VideoWidgetPlayer> {
         padding: EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
         width: wid * 0.9,
         decoration: BoxDecoration(
-          border: Border.all(color: Colors.white.withOpacity(0.13)),
+          border: Border.all(color: Colors.white.withValues(alpha: 0.13)),
           gradient: LinearGradient(
             colors: [
-              Colors.white.withOpacity(0.35),
+              Colors.white.withValues(alpha: 0.35),
               !x
-                  ? Colors.white.withOpacity(0.15)
-                  : Colors.white.withOpacity(0.14)
+                  ? Colors.white.withValues(alpha: 0.15)
+                  : Colors.white.withValues(alpha: 0.14)
             ],
             begin: Alignment.topLeft,
             end: Alignment.bottomCenter,
@@ -155,7 +155,7 @@ class _VideoWidgetPlayerState extends State<VideoWidgetPlayer> {
                 children: [
                   Container(
                     child:
-                        text('Time', asp * 35, iconColor.withOpacity(0.6), 2),
+                        text('Time', asp * 35, iconColor.withValues(alpha: 0.6), 2),
                   ),
                   text(
                       con.value.duration.inMinutes.toString() +
@@ -167,7 +167,7 @@ class _VideoWidgetPlayerState extends State<VideoWidgetPlayer> {
                               .toString() +
                           " secs",
                       asp * 30,
-                      iconColor.withOpacity(0.6),
+                      iconColor.withValues(alpha: 0.6),
                       2),
                 ],
               ),
@@ -177,7 +177,7 @@ class _VideoWidgetPlayerState extends State<VideoWidgetPlayer> {
                 children: [
                   Container(
                       child: text('Description', asp * 35,
-                          iconColor.withOpacity(0.6), 2)),
+                          iconColor.withValues(alpha: 0.6), 2)),
                   allButtons(
                       6,
                       x
@@ -190,13 +190,16 @@ class _VideoWidgetPlayerState extends State<VideoWidgetPlayer> {
               x
                   ? Container(
                       child: text(
-                          widget.b, asp * 30, iconColor.withOpacity(0.7), 1),
+                          widget.b, asp * 30, iconColor.withValues(alpha: 0.7), 1),
                     )
                   : Container(),
               SizedBox(height: hei * .02),
               GestureDetector(
                 onTap: () {
                   int i = title.indexOf(widget.a);
+                  // stop the lesson video so it doesn't keep playing
+                  // behind the quiz
+                  con.pause();
                   Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -256,8 +259,8 @@ class _VideoWidgetPlayerState extends State<VideoWidgetPlayer> {
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        Color(0xFFFFA500).withOpacity(0.4),
-                        Color(0xFFFFA500).withOpacity(0.3)
+                        Color(0xFFFFA500).withValues(alpha: 0.4),
+                        Color(0xFFFFA500).withValues(alpha: 0.3)
                       ],
                       begin: Alignment.topLeft,
                       end: Alignment.bottomCenter,
@@ -285,6 +288,8 @@ class _VideoWidgetPlayerState extends State<VideoWidgetPlayer> {
           setState(() => a1 = !a1);
           a1 ? con.setLooping(true) : con.setLooping(false);
         } else if (k == 1) {
+          // the next page plays its own copy of the video
+          con.pause();
           Navigator.push(
             context,
             MaterialPageRoute(

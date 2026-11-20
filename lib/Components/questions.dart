@@ -1,9 +1,9 @@
 List<String> quizNames = [
   'noun',
+  'pronoun',
   'verb',
   'adjective',
   'adverb',
-  'pronoun',
   'preposition',
   'conjunction',
   'interjection'
@@ -122,19 +122,19 @@ List<List<String>> nounOptions = [
     'A person, place, thing, or idea',
     'A linking word'
   ],
-  ['sun', 'sets', 'behind', 'mountains'],
+  ['sun', 'sets', 'behind', 'the'],
   ['childs', 'childes', 'children', 'child'],
   ['dog', 'park', 'London', 'tree'],
   ['a', 'cup', 'tea', 'of'],
   ['flock', 'gaggle', 'herd', 'pride'],
   ['kindness', 'everyone', 'touched', 'her'],
   ['president', 'nation', 'addressed', 'the'],
-  ['bookcase', 'book', 'case', 'bookshelf'],
+  ['bookcase', 'book', 'case', 'shelf'],
   ['common', 'proper', 'abstract', 'collective']
 ];
 List<String> nounAnswers = [
   'A person, place, thing, or idea',
-  'sets',
+  'sun',
   'children',
   'London',
   'tea',
@@ -154,29 +154,29 @@ List<List<String>> verbOptions = [
   ['She', 'Sings', 'Beautifully', 'The'],
   ['Runned', 'Running', 'Ran', 'Runs'],
   [
+    'I went to the store.',
+    'She sings beautifully.',
     'I am going to the store.',
-    'I am going to the store.',
-    'I am going to the store.',
-    'I am going to the store.'
+    'They play cricket.'
   ],
   ['is', 'playing', 'cup', 'of'],
   ['swim', 'swam', 'swimming', 'swum'],
   ['ate', 'delicious', 'cake', 'the'],
   ['flowers', 'smell', 'wonderful', 'the'],
-  ['run', 'ran', 'running', 'runs'],
-  ['common', 'proper', 'abstract', 'collective']
+  ['walked', 'ran', 'played', 'jumped'],
+  ['transitive', 'intransitive', 'linking', 'helping']
 ];
 List<String> verbAnswers = [
+  'An action word',
   'Sings',
   'Ran',
   'I am going to the store.',
-  'is',
   'playing',
   'swimming',
   'ate',
   'smell',
   'ran',
-  'proper'
+  'intransitive'
 ];
 List<List<String>> adjectiveOptions = [
   [
@@ -185,134 +185,134 @@ List<List<String>> adjectiveOptions = [
     'A person, place, thing, or idea',
     'A linking word'
   ],
-  ['blue', 'sky', 'clear', 'the'],
+  ['blue', 'sky', 'is', 'the'],
   ['Happier', 'Happiest', 'Happily', 'Happy'],
   [
     'The dog is the biggest of all.',
     'The dog is bigger than the other dogs.',
     'The dog is big.',
-    'The dog is the biggest of all.'
+    'The dog barks.'
   ],
-  ['two', 'big', 'elephants', 'of'],
-  ['an', 'old', 'book', 'book'],
-  ['sleepy', 'cat', 'curled', 'warm'],
+  ['big and elephants', 'two and elephants', 'two and big', 'only elephants'],
+  ['an', 'old', 'book', 'of'],
+  ['sleepy', 'cat', 'curled', 'blanket'],
   ['those', 'shoes', 'big', 'too'],
-  ['bookcase', 'book', 'case', 'bookshelf'],
-  ['common', 'proper', 'abstract', 'collective']
+  ['big', 'happy', 'Indian', 'blue'],
+  ['demonstrative', 'possessive', 'descriptive', 'interrogative']
 ];
 List<String> adjectiveAnswers = [
+  'A describing word',
   'blue',
-  'Happiest',
+  'Happier',
   'The dog is the biggest of all.',
-  'big',
+  'two and big',
   'old',
   'sleepy',
-  'shoes',
   'those',
-  'book',
-  'proper'
+  'Indian',
+  'descriptive'
 ];
 List<List<String>> adverbOptions = [
   [
     'A describing word',
     'An action word',
     'A person, place, thing, or idea',
-    'A linking word'
+    'A word that describes a verb'
   ],
   ['She', 'Speaks', 'Softly', 'The'],
   ['Quick', 'Quicker', 'Quickly', 'Quicklier'],
   [
+    'The shop was closed.',
+    'Unfortunately, the shop was closed.',
     'I am going to the store.',
-    'I am going to the store.',
-    'I am going to the store.',
-    'I am going to the store.'
+    'She has a red bag.'
   ],
-  ['is', 'playing', 'cup', 'of'],
-  ['swim', 'swam', 'swimming', 'swum'],
-  ['ate', 'delicious', 'cake', 'the'],
-  ['flowers', 'smell', 'wonderful', 'the'],
-  ['run', 'ran', 'running', 'runs'],
-  ['common', 'proper', 'abstract', 'collective']
+  ['is', 'playing', 'of', 'very and slowly'],
+  ['They', 'worked', 'hard', 'project'],
+  ['He', 'completed', 'task', 'effortlessly'],
+  ['She', 'rarely', 'misses', 'class'],
+  ['run', 'happy', 'very', 'book'],
+  ['time', 'manner', 'place', 'frequency']
 ];
 List<String> adverbAnswers = [
+  'A word that describes a verb',
   'Softly',
   'Quickly',
-  'I am going to the store.',
-  'is',
-  'playing',
-  'swimming',
-  'delicious',
-  'smell',
-  'running',
-  'common'
+  'Unfortunately, the shop was closed.',
+  'very and slowly',
+  'hard',
+  'effortlessly',
+  'rarely',
+  'very',
+  'place'
 ];
 List<List<String>> pronounOptions = [
   [
     'A describing word',
     'An action word',
     'A person, place, thing, or idea',
-    'A linking word'
+    'A word used in place of a noun'
   ],
-  ['I', 'Will', 'You', 'At'],
-  ['Childs', 'Child', 'Children', 'Childes'],
+  ['I', 'Will', 'Meet', 'At'],
+  ['His', 'Hers', 'Theirs', 'Mine'],
   [
-    'I am going to the store.',
-    'I am going to the store.',
-    'I am going to the store.',
-    'I am going to the store.'
+    'She hurt him.',
+    'She is going to the store.',
+    'They are happy.',
+    'She hurt herself.'
   ],
-  ['is', 'playing', 'cup', 'of'],
-  ['swim', 'swam', 'swimming', 'swum'],
-  ['ate', 'delicious', 'cake', 'the'],
-  ['flowers', 'smell', 'wonderful', 'the'],
-  ['run', 'ran', 'running', 'runs'],
-  ['common', 'proper', 'abstract', 'collective']
+  ['to', 'them', 'cup', 'of'],
+  ['She', 'is', 'good', 'friend'],
+  ['They', 'are', 'going', 'movies'],
+  ['Everyone', 'is', 'welcome', 'attend'],
+  ['he', 'they', 'who', 'it'],
+  ['reflexive', 'personal', 'relative', 'demonstrative']
 ];
 List<String> pronounAnswers = [
+  'A word used in place of a noun',
   'I',
-  'Children',
-  'I am going to the store.',
-  'playing',
-  'swim',
-  'the',
+  'Theirs',
+  'She hurt herself.',
+  'them',
+  'She',
   'They',
   'Everyone',
-  'run',
-  'common'
+  'who',
+  'personal'
 ];
 List<List<String>> prepositionOptions = [
   [
     'A describing word',
     'An action word',
     'A person, place, thing, or idea',
-    'A linking word'
+    'A word that shows place, time, or direction'
   ],
   ['The', 'Book', 'Is', 'On'],
-  ['On', 'In', 'Under', 'Over'],
+  ['Of', 'Since', 'On', 'Until'],
   [
+    'I am going.',
     'I am going to the store.',
-    'I am going to the store.',
-    'I am going to the store.',
-    'I am going to the store.'
+    'She sings beautifully.',
+    'They are happy.'
   ],
-  ['is', 'playing', 'cup', 'of'],
-  ['swim', 'swam', 'swimming', 'swum'],
-  ['ate', 'delicious', 'cake', 'the'],
-  ['flowers', 'smell', 'wonderful', 'the'],
-  ['run', 'ran', 'running', 'runs'],
-  ['common', 'proper', 'abstract', 'collective']
+  ['in', 'the', 'morning', 'is'],
+  ['dog', 'ran', 'through', 'park'],
+  ['cat', 'jumped', 'off', 'table'],
+  ['book', 'is', 'inside', 'box'],
+  ['in', 'within', 'on', 'at'],
+  ['time', 'place', 'direction', 'topic']
 ];
 List<String> prepositionAnswers = [
+  'A word that shows place, time, or direction',
   'On',
   'On',
   'I am going to the store.',
-  'I am going to the store.',
-  'of',
-  'park',
+  'in',
+  'through',
   'off',
   'inside',
-  'run',
-  'proper'
+  'within',
+  'topic'
 ];
 List<List<String>> conjunctionOptions = [
   [
@@ -321,64 +321,64 @@ List<List<String>> conjunctionOptions = [
     'A person, place, thing, or idea',
     'A linking word'
   ],
-  ['I', 'Like', 'To', 'Read'],
-  ['And', 'Or', 'But', 'Nor'],
+  ['I', 'Like', 'To', 'And'],
+  ['Because', 'Or', 'Since', 'Nor'],
   [
     'I am going to the store.',
-    'I am going to the store.',
-    'I am going to the store.',
-    'I am going to the store.'
+    'I like tea and coffee.',
+    'Either you come or I go.',
+    'She sings beautifully.'
   ],
-  ['is', 'playing', 'cup', 'of'],
-  ['swim', 'swam', 'swimming', 'swum'],
-  ['ate', 'delicious', 'cake', 'the'],
-  ['flowers', 'smell', 'wonderful', 'the'],
-  ['run', 'ran', 'running', 'runs'],
-  ['common', 'proper', 'abstract', 'collective']
+  ['or', 'not', 'cup', 'of'],
+  ['I', 'like', 'but', 'not'],
+  ['I', 'like', 'read', 'or'],
+  ['I', 'like', 'read', 'and'],
+  ['and', 'or', 'because', 'but'],
+  ['subordinating', 'coordinating', 'correlative', 'compound']
 ];
 List<String> conjunctionAnswers = [
-  'I',
+  'A linking word',
   'And',
   'Or',
-  'I am going to the store.',
+  'Either you come or I go.',
   'or',
   'but',
-  'I like to read or write.',
+  'or',
   'and',
-  'ran',
-  'common'
+  'because',
+  'coordinating'
 ];
 List<List<String>> interjectionOptions = [
   [
     'A describing word',
     'An action word',
     'A person, place, thing, or idea',
-    'A linking word'
+    'A word that shows sudden feeling'
   ],
   ['Wow', 'That', 'Was', 'A'],
   ['Wow', 'That', 'Was', 'A'],
   [
     'I am going to the store.',
-    'I am going to the store.',
-    'I am going to the store.',
-    'I am going to the store.'
+    'She sings beautifully.',
+    'Hurray! We won the match.',
+    'The dog is big.'
   ],
-  ['is', 'playing', 'cup', 'of'],
-  ['swim', 'swam', 'swimming', 'swum'],
-  ['ate', 'delicious', 'cake', 'the'],
-  ['flowers', 'smell', 'wonderful', 'the'],
-  ['run', 'ran', 'running', 'runs'],
-  ['common', 'proper', 'abstract', 'collective']
+  ['is', 'Oh no', 'cup', 'of'],
+  ['Oh', 'I', 'forgot', 'homework'],
+  ['Wow', 'That', 'was', 'call'],
+  ['Oh no', 'I', 'forgot', 'homework'],
+  ['run', 'happy', 'Hurray', 'table'],
+  ['sorrow', 'greeting', 'approval', 'surprise']
 ];
 List<String> interjectionAnswers = [
+  'A word that shows sudden feeling',
   'Wow',
   'Wow',
+  'Hurray! We won the match.',
+  'Oh no',
+  'Oh',
   'Wow',
-  'Wow',
-  'playing',
-  'swim',
-  'ate',
-  'flowers',
-  'run',
-  'common'
+  'Oh no',
+  'Hurray',
+  'surprise'
 ];

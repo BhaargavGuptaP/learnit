@@ -81,7 +81,7 @@ class _ProfileState extends State<Profile> {
                                 height: hei * 0.15,
                                 width: wid * 0.3,
                                 decoration: BoxDecoration(
-                                  color: iconColor.withOpacity(0.6),
+                                  color: iconColor.withValues(alpha: 0.6),
                                   borderRadius: BorderRadius.circular(100),
                                 ),
                                 child: Icon(Icons.person,
@@ -132,7 +132,7 @@ class _ProfileState extends State<Profile> {
                                         hintText: widget.name,
                                         hintStyle: TextStyle(
                                             color: Color(0xFFEFEBE0)
-                                                .withOpacity(0.5)),
+                                                .withValues(alpha: 0.5)),
                                         enabledBorder: UnderlineInputBorder(
                                           borderSide:
                                               BorderSide(color: iconColor),
@@ -154,14 +154,16 @@ class _ProfileState extends State<Profile> {
                                     child: text('Cancel', 18, iconColor, 2),
                                   ),
                                   TextButton(
-                                    onPressed: () {
-                                      setState(() {
-                                        if (changedName.text.trim() != '')
-                                          FirebaseAuth.instance.currentUser!
-                                              .updateDisplayName(
-                                                  changedName.text.trim());
-                                      });
+                                    onPressed: () async {
                                       Navigator.pop(context);
+                                      if (changedName.text.trim() != '') {
+                                        // wait for the update so the new
+                                        // name shows on this page
+                                        await FirebaseAuth.instance.currentUser!
+                                            .updateDisplayName(
+                                                changedName.text.trim());
+                                        if (mounted) setState(() {});
+                                      }
                                     },
                                     child: text('Save', 18, iconColor, 2),
                                   ),
@@ -178,8 +180,8 @@ class _ProfileState extends State<Profile> {
                           borderRadius: BorderRadius.circular(10),
                           gradient: LinearGradient(
                             colors: [
-                              Color(0xFFFFA500).withOpacity(0.4),
-                              Color(0xFFFFA500).withOpacity(0.3)
+                              Color(0xFFFFA500).withValues(alpha: 0.4),
+                              Color(0xFFFFA500).withValues(alpha: 0.3)
                             ],
                             begin: Alignment.topLeft,
                             end: Alignment.bottomCenter,
@@ -272,10 +274,14 @@ class _ProfileState extends State<Profile> {
                         GestureDetector(
                             onTap: () async {
                               await FirebaseAuth.instance.signOut();
-                              Navigator.push(
+                              if (!context.mounted) return;
+                              // Clear the signed-in pages so Back can't
+                              // return to them after logging out.
+                              Navigator.pushAndRemoveUntil(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => SorL()));
+                                      builder: (context) => SorL()),
+                                  (route) => false);
                             },
                             child: text('Logout', 20, Colors.red, 2)),
                       ],

@@ -8,7 +8,6 @@ import 'package:learnit/Pages/home.dart';
 import 'package:learnit/Utils/color.dart';
 import '../Utils/text.dart';
 import 'signup.dart';
-import 'signup_login.dart';
 
 class LogIn extends StatefulWidget {
   const LogIn({super.key});
@@ -35,8 +34,7 @@ class _LogInState extends State<LogIn> {
             children: [
               IconButton(
                 onPressed: () {
-                  Navigator.push(
-                      context, MaterialPageRoute(builder: (context) => SorL()));
+                  Navigator.pop(context);
                 },
                 icon: Icon(
                   Icons.arrow_back_ios,
@@ -69,21 +67,31 @@ class _LogInState extends State<LogIn> {
                     if (EmailValidator.validate(email.text) &&
                         (password.text.length >= 8)) {
                       try {
-                        UserCredential? userCredential;
-
-                        userCredential = await FirebaseAuth.instance
-                            .signInWithEmailAndPassword(
-                              email: email.text,
-                              password: password.text,
-                            )
-                            .then((value) => Navigator.of(context).push(
-                                MaterialPageRoute(
-                                    builder: (context) => Home(
-                                        name: FirebaseAuth
-                                            .instance.currentUser!.displayName
-                                            .toString()))));
+                        await FirebaseAuth.instance.signInWithEmailAndPassword(
+                          email: email.text,
+                          password: password.text,
+                        );
+                        if (!context.mounted) return;
+                        // Home becomes the only page, so Back can't return
+                        // to the login screen.
+                        Navigator.of(context).pushAndRemoveUntil(
+                            MaterialPageRoute(
+                                builder: (context) => Home(
+                                    name: FirebaseAuth
+                                        .instance.currentUser!.displayName
+                                        .toString())),
+                            (route) => false);
                       } catch (e) {
-                        print('sajbjhvcshjva');
+                        if (!context.mounted) return;
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text(e is FirebaseAuthException
+                                ? (e.message ?? 'Login failed')
+                                : 'Login failed'),
+                            duration: Duration(seconds: 2),
+                            backgroundColor: Colors.red,
+                          ),
+                        );
                       }
                     } else {
                       ScaffoldMessenger.of(context).showSnackBar(
@@ -116,8 +124,8 @@ class _LogInState extends State<LogIn> {
                       border: Border.all(color: Color(0xFFFFA500)),
                       gradient: LinearGradient(
                         colors: [
-                          Color(0xFFFFA500).withOpacity(0.4),
-                          Color(0xFFFFA500).withOpacity(0.3)
+                          Color(0xFFFFA500).withValues(alpha: 0.4),
+                          Color(0xFFFFA500).withValues(alpha: 0.3)
                         ],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomCenter,
@@ -195,7 +203,7 @@ class _LogInState extends State<LogIn> {
                     )
                   : null,
               hintStyle: TextStyle(
-                  color: Color(0xFFEFEBE0).withOpacity(0.5),
+                  color: Color(0xFFEFEBE0).withValues(alpha: 0.5),
                   fontFamily: 'mont2',
                   fontSize: asp * 30),
               enabledBorder: OutlineInputBorder(

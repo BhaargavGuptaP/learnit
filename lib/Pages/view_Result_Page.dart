@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, file_names
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -96,7 +96,7 @@ class ViewResult extends StatelessWidget {
                       width: 100,
                       child: Center(
                         child: Text(
-                          '${total * 10}%',
+                          '${(total * 100 / 80).round()}%',
                           style: TextStyle(
                             color: Colors.green,
                             fontFamily: 'mont2',
@@ -162,18 +162,18 @@ class ViewResult extends StatelessWidget {
       width: wid * 0.4,
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.white.withOpacity(0.13)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.13)),
         gradient: LinearGradient(
           colors: [
-            Colors.white.withOpacity(0.35),
-            Colors.white.withOpacity(0.14)
+            Colors.white.withValues(alpha: 0.35),
+            Colors.white.withValues(alpha: 0.14)
           ],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
         ),
         borderRadius: BorderRadius.circular(15),
       ),
-      margin: EdgeInsets.all(20),
+      margin: EdgeInsets.symmetric(horizontal: wid * 0.045, vertical: 20),
       child: Column(
         children: [
           Text(name,
@@ -190,7 +190,9 @@ class ViewResult extends StatelessWidget {
                 fontFamily: 'mont2'),
           ),
           SizedBox(height: 10),
-          Row(
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Stack(
@@ -220,6 +222,7 @@ class ViewResult extends StatelessWidget {
                       fontSize: asp * 25,
                       fontFamily: 'mont2')),
             ],
+          ),
           ),
         ],
       ),

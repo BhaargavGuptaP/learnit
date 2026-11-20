@@ -85,11 +85,10 @@ class _QuizState extends State<Quiz> {
             ),
           ),
           SizedBox(height: 20),
-          Stack(
+          Expanded(
+            child: Stack(
             children: [
-              SingleChildScrollView(
-                child: Container(
-                  height: hei * 0.8,
+              SizedBox(
                   width: wid,
                   child: ListView.builder(
                     itemCount: 10,
@@ -105,7 +104,7 @@ class _QuizState extends State<Quiz> {
                               borderRadius: BorderRadius.circular(10),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.grey.withOpacity(0.5),
+                                  color: Colors.grey.withValues(alpha: 0.5),
                                   spreadRadius: 1,
                                   blurRadius: 7,
                                   offset: Offset(0, 3),
@@ -169,7 +168,7 @@ class _QuizState extends State<Quiz> {
                                 Container(
                                   margin: EdgeInsets.only(left: 15, right: 15),
                                   child: Divider(
-                                      color: Color(0xFFEFEBE0).withOpacity(0.5),
+                                      color: Color(0xFFEFEBE0).withValues(alpha: 0.5),
                                       thickness: 1),
                                 ),
                                 Container(
@@ -181,9 +180,9 @@ class _QuizState extends State<Quiz> {
                                           isSelected[index][i] = false;
                                         }
                                         //remove the selected option from the userAnswers list
-                                        userAnswers[widget.options.indexOf(
-                                            widget.options[index])] = '';
-                                        if (cnt != 0) cnt--;
+                                        //(only an answered question counts down)
+                                        if (userAnswers[index] != '') cnt--;
+                                        userAnswers[index] = '';
                                       });
                                     },
                                     child: text('Clear Selection', asp * 25,
@@ -201,7 +200,6 @@ class _QuizState extends State<Quiz> {
                       );
                     },
                   ),
-                ),
               ),
               Positioned(
                 bottom: 0,
@@ -214,9 +212,9 @@ class _QuizState extends State<Quiz> {
                       end: Alignment.topCenter,
                       colors: [
                         Color(0xFF171617),
-                        Color(0xFF171617).withOpacity(0.7),
-                        Color(0xFF171617).withOpacity(0.5),
-                        Color(0xFF171617).withOpacity(0),
+                        Color(0xFF171617).withValues(alpha: 0.7),
+                        Color(0xFF171617).withValues(alpha: 0.5),
+                        Color(0xFF171617).withValues(alpha: 0),
                       ],
                     ),
                   ),
@@ -256,14 +254,14 @@ class _QuizState extends State<Quiz> {
                               borderRadius: BorderRadius.circular(12),
                               gradient: LinearGradient(
                                 colors: [
-                                  Color(0xFFFFA500).withOpacity(0.4),
-                                  Color(0xFFFFA500).withOpacity(0.3)
+                                  Color(0xFFFFA500).withValues(alpha: 0.4),
+                                  Color(0xFFFFA500).withValues(alpha: 0.3)
                                 ],
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomCenter,
                               ),
                               border: Border.all(
-                                  color: Color(0xFFFFA500).withOpacity(0.5)),
+                                  color: Color(0xFFFFA500).withValues(alpha: 0.5)),
                             ),
                             child: Center(
                                 child: text(
@@ -276,6 +274,7 @@ class _QuizState extends State<Quiz> {
                 ),
               ),
             ],
+          ),
           ),
         ],
       ),
@@ -295,10 +294,8 @@ class _QuizState extends State<Quiz> {
                   isSelected[index][i] = false;
               }
 
-              if (userAnswers[widget.options.indexOf(widget.options[index])] ==
-                  '') cnt++;
-              userAnswers[widget.options.indexOf(widget.options[index])] =
-                  widget.options[index][optionNumber];
+              if (userAnswers[index] == '') cnt++;
+              userAnswers[index] = widget.options[index][optionNumber];
             });
           },
           child: Container(
@@ -321,13 +318,15 @@ class _QuizState extends State<Quiz> {
           ),
         ),
         SizedBox(width: 10),
-        text(
-            name,
-            asp * 25,
-            isSelected[index][optionNumber]
-                ? Color(0xFFEFEBE0)
-                : Color.fromARGB(255, 126, 125, 125),
-            2),
+        Flexible(
+          child: text(
+              name,
+              asp * 25,
+              isSelected[index][optionNumber]
+                  ? Color(0xFFEFEBE0)
+                  : Color.fromARGB(255, 126, 125, 125),
+              2),
+        ),
       ],
     );
   }

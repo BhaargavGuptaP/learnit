@@ -39,8 +39,8 @@ class _SorLState extends State<SorL> {
                             border: Border.all(color: Color(0xFFFFA500)),
                             gradient: LinearGradient(
                               colors: [
-                                Color(0xFFFFA500).withOpacity(0.4),
-                                Color(0xFFFFA500).withOpacity(0.3)
+                                Color(0xFFFFA500).withValues(alpha: 0.4),
+                                Color(0xFFFFA500).withValues(alpha: 0.3)
                               ],
                               begin: Alignment.topLeft,
                               end: Alignment.bottomCenter,

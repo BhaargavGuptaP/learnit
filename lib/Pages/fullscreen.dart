@@ -35,6 +35,13 @@ class _FullScreenState extends State<FullScreen> {
   }
 
   @override
+  void dispose() {
+    // Also leave landscape when this page is closed with the back gesture.
+    setPortrait();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
@@ -55,7 +62,7 @@ class _FullScreenState extends State<FullScreen> {
                 });
               },
               child: Container(
-                color: Color(0xFF171617).withOpacity(0.5),
+                color: Color(0xFF171617).withValues(alpha: 0.5),
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
                 child: Stack(
